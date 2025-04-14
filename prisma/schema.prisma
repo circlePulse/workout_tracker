@@ -10,3 +10,13 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Workout {
+  id       Int      @id @default(autoincrement())
+  exercise String
+  weight   Float
+  reps1    Int
+  reps2    Int
+  date     DateTime @default(now())
+  type     String // e.g., "hypertrophy" or "strength"
+}
